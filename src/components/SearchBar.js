@@ -29,7 +29,7 @@ const SearchBar = () => {
       <button
         type="submit"
         disabled={!search}
-        className="disabled:text-gray-400 border border-gray-500   px-3 cursor-pointer "
+        className="disabled:text-gray-400 border border-gray-500   px-3 cursor-pointer hidden md:block"
         onClick={handleSubmit}
       >
         {" "}
