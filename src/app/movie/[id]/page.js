@@ -57,17 +57,19 @@ const page = async ({ params }) => {
 
         <div>
           <div className="p-2">
-            <h2 className="text-lg mb-3  font-bold">
+            <h2 className="text-lg mb-3  font-bold" data-testid="movie-title">
               {results.original_title}
             </h2>
           </div>
 
-          <div>{results.overview}</div>
+          <div data-testid="movie-overview">{results.overview}</div>
 
-          <div className="text-bold mt-4">
+          <div className="text-bold mt-4" data-testid="movie-release-date">
             {new Intl.DateTimeFormat("en-US", options).format(inputDate)}
           </div>
-          <div className="text-bold mt-4">{results.runtime}</div>
+          <div className="text-bold mt-4" data-testid="movie-runtime">
+            {results.runtime}
+          </div>
         </div>
       </div>
     </div>

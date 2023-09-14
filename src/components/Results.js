@@ -10,21 +10,29 @@ const Results = ({ result }) => {
         <section
           key={item.id}
           className="p-3 cursor-pointer dark:text-gray-400 dark:shadow-md"
+          data-testid=" movie-card"
         >
           <Link href={`/movie/${item.id}`}>
             <div>
               <img
                 className="w-[250px] h-[370px]"
                 src={imageSrc + item.poster_path}
+                data-testid="movie-poster"
               />
             </div>
 
             <div className="flex flex-col gap-2 mt-2 pt-3">
-              <div className="text-gray-400 text-xs font-bold font-['DM Sans']">
+              <div
+                className="text-gray-400 text-xs font-bold font-['DM Sans']"
+                data-testid="movie-release-date"
+              >
                 Release Date: {item.release_date}
               </div>
 
-              <div className="w-[250px] text-gray-900 text-lg font-bold font-['DM Sans'] dark:text-gray-400">
+              <div
+                className="w-[250px] text-gray-900 text-lg font-bold font-['DM Sans'] dark:text-gray-400"
+                data-testid="movie-title"
+              >
                 {item.title}
               </div>
 
