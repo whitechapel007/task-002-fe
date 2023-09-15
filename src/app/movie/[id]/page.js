@@ -27,15 +27,6 @@ const page = async ({ params }) => {
   //   results = results.results;
   console.log("rr", results);
 
-  const inputDate = new Date(results.release_date);
-
-  const dateOptions = {
-    timeZone: "UTC",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  };
-
   return (
     <div classNamle="w-full">
       <div className="p-4 pt-5">
@@ -65,7 +56,7 @@ const page = async ({ params }) => {
           <div data-testid="movie-overview">{results.overview}</div>
 
           <div className="text-bold mt-4" data-testid="movie-release-date">
-            {new Intl.DateTimeFormat("en-US", options).format(inputDate)}
+            {new Date(results.release_date).toUTCString()}
           </div>
           <div className="text-bold mt-4" data-testid="movie-runtime">
             {results.runtime}
