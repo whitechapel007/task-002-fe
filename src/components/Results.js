@@ -26,7 +26,7 @@ const Results = ({ result }) => {
                 className="text-gray-400 text-xs font-bold font-['DM Sans']"
                 data-testid="movie-release-date"
               >
-                Release Date: {item.release_date}
+                {new Date(item.release_date).toUTCString()}
               </div>
 
               <div
